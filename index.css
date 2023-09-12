@@ -1,0 +1,494 @@
+/* global */
+:root {
+    --base-font : 16px;
+    --primary-font: "Poppins";
+    --secondary-font: "Roboto";
+    --tertiary-font: "Heebo";
+    --primary-bg: #000;
+    --secondary-bg: #0B0C10;
+    --tertiary-bg: #121212;
+    --thin: 100;
+    --extra-light: 200;
+    --light: 300;
+    --normal: 500;
+    --medium: 500;
+    --semi-bold: 600;
+    --bold: 700;
+    --extra-bold: 800;
+    --heavy: 900;
+    --white: #fff;
+    --color-secondary: #66FCF1;
+}
+
+/* header */   
+html {
+    box-sizing: border-box; /*no tener que contar px*/
+    font-family: var(--secondary-font);
+    font-size: 0.93375 rem;
+    color: #d0d0d0;
+    background: var(--primary-bg);
+}
+
+/*todo lo que tenga antes y después de cualquier elm lo hereda*/
+*,
+*::before
+*::after {
+    box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: var(--secondary-font);
+    font-weight: var(--bold);
+    color: var(--white);
+    margin: 0;
+}
+
+h1 {
+    font-size: 4.75rem;
+    line-height: 5.7rem;
+    text-transform: capitalize;
+    margin: 1.4375rem 0 1rem;
+}
+
+h2 {
+    font-size: 3rem;
+    line-height: 3.6rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    margin: 1.875rem 0 1.25rem 0;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: var(--medium);
+    line-height: 1.8rem;
+    margin: 0.5rem 0 1rem 0;
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: var(--medium);
+    line-height: 1.2rem;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    color: var(--color-secondary)
+}
+
+a {
+    color: var(--color-secondary);
+    font-family: var(--secondary-font);
+    font-weight: var(--normal);
+    line-height: 1.6rem;
+}
+
+p {
+    font-family: var(--secondary-font);
+    font-size: 0.9375rem;
+    line-height: 1.4875rem;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.cta {
+    padding: 18px 40px;
+    background-color: transparent;
+    border: 2px solid var(--color-secondary);
+    color: var(--white);
+    letter-spacing: 1.5px;
+    font-family: var(--tertiary-font);
+    font-size: 0.9375rem;
+    text-transform: uppercase;
+}
+
+.section {
+    padding: 100px 36px;
+}
+
+.section-heading-container {
+    margin-bottom: 64px;
+}
+
+.section-heading-container h2:before {
+    content: "";
+    width: 70px;
+    height: 14px;
+    margin-right: 20px;
+    border-top-width: 3px;
+    border-top-color: var(--color-secondary);
+    border-top-style: solid;
+    display: inline-block;
+}
+
+/* sections */
+.inner-container {
+    margin: 0 auto;
+    max-width: 1170px;
+    padding: 15px;
+    overflow: hidden; /*su contenido sobrepasa los límites de su contenedor*/
+}
+
+/* hero */
+.hero-section {
+    background-color: var(--primary-bg);
+    background-image: url(./img/flamingos.svg);
+    padding: 0 0 180px;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    font-family: var(--primary-font);
+    font-weight: var(--medium);
+    font-size: 2.25rem;
+    line-height: 2.6875rem;
+    text-decoration: underline;
+    color: var(--white);
+}
+
+.nav-header {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 224px;
+}
+
+.nav-header td {
+    width: 50%;
+}
+
+.nav-header td:last-child {
+    text-align: right;
+}
+
+.nav li {
+    display: inline-block; /*horizontalmente*/
+    position: relative;
+}
+
+.nav li a {
+    color: var(--white);
+    font-size: 0.875rem;
+    padding: 0.625rem 0.6875rem;
+    text-decoration: none;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+}
+
+.nav li ul {
+    display: none;
+    background-color: var(--white);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    padding: 0;
+}
+
+.nav li:hover ul { /*cuando le posicionen el mouse encima, al hijo de li:*/
+    display: block;
+}
+
+.nav li ul li {
+    display: block;
+}
+
+.nav li ul li a {
+    color: var(--primary-bg);
+    width: 150px;
+    text-align: left;
+}
+
+.hero-container {
+    
+    width: 640px;
+}
+
+.hero-container h1 {
+    margin-bottom: 60px;
+}
+
+.hero-container h5 {
+    margin-bottom: 40px;
+}
+
+.box {
+    border: 2px solid var(--tertiary-bg);
+    padding: 50px 40px;
+    background-color: var(--tertiary-bg);
+    margin: 0 12px;
+}
+
+.box p {
+    max-width: 300px;
+}
+
+.hero-section table td:first-child .box{
+    margin-left: 0;
+}
+
+.hero-section table td:last-child .box {
+    margin-right: 0;
+}
+
+.hero-container {
+    margin-bottom: 100px;
+}
+
+.box:hover,
+.hero-section table td:nth-child(2) .box{
+    border: 2px solid var(--color-secondary);
+}
+
+/* services */
+.services-section {
+    background-color: var(--secondary-bg);
+}
+
+.grid-container .box {
+    border-bottom-width: 5px;
+    border-bottom-color: var(--white);
+}
+
+.grid-container table td:first-child {
+    margin-bottom: 63px;
+}
+
+.colored, .colored h3 {
+    background-color: var(--color-secondary);
+    color: var(--primary-bg);
+}
+
+/* works */
+.works-section {   
+    background-color: var(--tertiary-bg);
+}
+
+.works-section table {
+    width: 100%;
+}
+
+.works-section .section-grid table {
+    width: 100%;
+}
+
+.works-section table td:last-child {
+    text-align:right;
+    vertical-align: middle;
+}
+
+.works-section .section-grid td {
+    vertical-align: top;
+    padding: 0 10px;
+}
+
+.works-section .section-grid img {
+    width: 100%;
+}
+
+/* about */
+.about-section {
+    background-color: var(--primary-bg);
+}
+
+.about-grid td {
+    vertical-align: top;
+    padding: 0 10px;
+}
+
+.about-grid td:last-child div:first-child {
+    margin-bottom: 24px;
+}
+
+.about-grid .left,
+.about-grid .top,
+.about-grid .bottom {
+    position: relative;
+}
+
+.about-grid .left .image-caption {
+    position: absolute;
+    top: 500px;
+    left: 20px;
+}
+
+.about-grid .top .image-caption,
+.about-grid .bottom .image-caption {
+    position: absolute;
+    top: 170px;
+    left: 20px;
+}
+
+.about-text {
+    margin-top: 104px;
+}
+
+.about-text td {
+    padding-right: 60px;
+}
+
+.about-text p {
+    padding-right: 47px;
+}
+
+/* testimonials */
+.testimonials-section {
+    background-color: var(--tertiary-bg);
+}
+
+.testimonials {
+    background-color: var(--primary-bg);
+    border: 1px solid #363636;
+    text-align: center;
+    padding: 41px 42px 82px;
+    margin: 0 10px;
+    position: relative;
+}
+
+.testimonials p {
+    font-weight: var(--normal);
+    font-size: 1rem;
+    line-height: 27px;
+    font-style: italic;
+    margin: 0;
+}
+
+.icon {
+    position: relative;
+    margin-top: -40px;
+    text-align: center;
+}
+
+.testimonials-profile {
+    text-align: center;
+}
+
+.testimonials-profile .name {
+    font-size: 1rem;
+    font-weight: var(--bold);
+    color: var(--white);
+    margin-bottom: 0;
+}
+
+.testimonials-profile .role {
+    font-size: 0.875rem;
+    margin-top: 0;
+}
+
+/* news */
+.news-section {
+    background-color: var(--primary-bg);
+}
+.news-section .section-heading-container {
+    text-align: center;
+}
+
+.inner-container table {
+    width: 100%;
+}
+
+.news-container td {
+    vertical-align: top;
+    width: 33%;
+    padding: 0 40px;
+}
+
+/* bottom image */
+
+.getstarted-section {
+    height: 447px;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 15px;
+    text-align: center;
+}
+
+.getstarted-section .computer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.social ul {
+    margin-top: 100px;
+}
+
+.social ul li {
+    width: 25px;
+    height: 25px;
+    padding: 8px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.social ul li:hover {
+    background: var(--white);
+}
+
+.getstarted-section h2 {
+    margin: 40px 0;
+}
+
+/* footer */
+.footer-section {
+    background-color: var(--primary-bg);
+    margin: 39px  0 0;
+}
+
+.footer-section table {
+    width: 100%;
+}
+
+.footer-section table td:first-child {
+    width: 30%;
+}
+
+.footer-section table td {
+    vertical-align: top;
+    padding-right: 40px;
+}
+
+.footer-column h6 {
+    font-family: var(--primary-font);
+    font-weight: var(--medium);
+    font-size: 18px;
+    line-height: 1.375rem;
+    color: var(--white);
+    margin: 30px 0 20px;
+}
+
+.footer-column ul {
+    padding-bottom: 2.8rem;
+}
+
+.footer-column li {
+    display: block;
+    line-height: 44.8px;
+}
+
+.copy-right{
+    margin-top: -20px;
+}
+.copy-right .copy-social img {
+    padding-left: 24px;
+}
+
+.copy-right td:last-child{
+    display: flex;
+    justify-content: flex-end;
+}
